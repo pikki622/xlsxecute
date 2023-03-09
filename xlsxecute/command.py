@@ -56,7 +56,7 @@ def render(source_file, run_dir, output_dir, parameter_file=None, arg_params=Non
     if param_file:
         if param_file.lower().endswith(".csv"):
             param_data = csv.reader(open(param_file))
-            params = dict(row[0:2] for row in list(param_data))
+            params = dict(row[:2] for row in list(param_data))
         elif param_file.lower().endswith(".json"):
             params = json.load(open(param_file))
         else:
